@@ -1,0 +1,84 @@
+page-detail, [riot-tag="page-detail"] {
+	position: fixed;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #FFF;
+	overflow: hidden;
+}
+
+:local(.container) {
+	box-sizing: border-box;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	overflow-y: scroll;
+	padding-bottom: 2.6rem;
+}
+
+:local(.nav_back) {
+	position: absolute;
+	top: .4rem;
+	left: .4rem;
+	width: 1.4rem;
+}
+:local(.nav_cart) {
+	position: absolute;
+	top: .4rem;
+	right: .4rem;
+	width: 1.4rem;
+}
+
+:local(.sliders) {
+	width: 16rem;
+	height: 16rem;
+}
+
+:local(.title) {
+	margin-top: .5rem;
+	padding: 0 .5rem;
+}
+
+:local(.desc) {
+	font-size: .5rem;
+	color: #999;
+	margin-top: .3rem;
+	padding: 0 .5rem;
+}
+
+:local(.price) {
+	margin-top: .3rem;
+	padding: 0 .5rem;
+}
+:local(.cprice) {
+	color: #ff3600;
+	font-size: .8rem;
+}
+:local(.oprice) {
+	color: #999;
+	text-decoration: line-through;
+}
+
+:local(.cartbar) {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	overflow: hidden;
+	padding: .3rem .5rem;
+	box-sizing: border-box;
+	border-top: solid 1px #DDD;
+	background-color: #FFF;
+}
+:local(.cartbar ui-number-input) {
+	float: left;
+	margin-top: .25rem;
+}
+:local(.add_to_cart) {
+	float: right;
+	background-color: #ffe123;
+	width: 5rem;
+	text-align: center;
+	height: 1.5rem;
+	line-height: 1.5rem;
+	border-radius: .15rem;
+}

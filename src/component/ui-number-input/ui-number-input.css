@@ -1,0 +1,25 @@
+ui-number-input, [riot-tag="ui-number-input"] {
+	display: block;
+	border: solid 1px #DDD;
+	width: 3rem;
+	text-align: center;
+	overflow: hidden;
+	height: 1rem;
+	line-height: 1rem;
+}
+:local(.num) {
+	float: left;
+	box-sizing: border-box;
+	width: 1rem;
+}
+:local(.action) {
+	float: left;
+	box-sizing: border-box;
+	width: 1rem;
+}
+:local(.actin_subtract) {
+	border-right: solid 1px #DDD;
+}
+:local(.action_add) {
+	border-left: solid 1px #DDD;
+}

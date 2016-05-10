@@ -1,0 +1,16 @@
+ui-cell {
+	display: -webkit-box;
+	margin-left: .5rem;
+	height: 2rem;
+	line-height: 2rem;
+}
+
+:local(.left) {
+
+}
+
+:local(.right) {
+	-webkit-box-flex: 1;
+	padding-right: .5rem;
+	color: #333;
+}

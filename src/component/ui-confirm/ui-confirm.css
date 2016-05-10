@@ -1,0 +1,44 @@
+ui-confirm {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0,0,0,.4);
+	z-index: 1;
+}
+
+:local(.base) {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate3d(-50%,-50%,0);
+	max-width: 80%;
+	opacity: .9;
+	overflow: hidden;
+	min-width: 60%;
+	text-align: center;
+	background-color: #FFF;
+	border-radius: .3rem;
+}
+:local(.content) {
+	padding: 1rem;
+	border-bottom: solid 1px #DDD;
+}
+:local(.actions) {
+	overflow: hidden;
+	color: #007aff;
+}
+:local(.action) {
+	box-sizing: border-box;
+	float: left;
+	text-align: center;
+	width: 50%;
+	padding: .6rem 0;
+}
+:local(.action:active) {
+	background-color: #F2F2F2;
+}
+:local(.ok) {
+	border-left: solid 1px #DDD;
+}

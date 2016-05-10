@@ -1,0 +1,44 @@
+:local(.base) {
+	position: fixed;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #FFF;
+}
+
+:local(.logo) {
+	text-align: center;
+}
+:local(.logo_image) {
+	display: inline-block;
+	width: 4rem;
+	margin: 2rem 0 1rem;
+}
+
+:local(.form) {
+
+}
+:local(.form_input) {
+	position: relative;
+	left: 50%;
+	transform: translate3d(-50%,0,0);
+	display: block;
+	width: 10rem;
+	border-bottom: solid 1px #666;
+	padding: .5rem .15rem;
+	margin-bottom: .5rem;
+}
+
+:local(.button) {
+	position: relative;
+	left: 50%;
+	transform: translate3d(-50%,0,0);
+	box-sizing: border-box;
+	width: 10rem;
+	padding: .5rem 0;
+	color: #333;
+	background-color: #ffe123;
+	border-radius: .15rem;
+	text-align: center;
+	margin-top: 1rem;
+}

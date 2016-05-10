@@ -1,0 +1,107 @@
+/* Page */
+
+.page {
+	backface-visibility: hidden;
+	display: none;
+	width: 100%;
+}
+
+.page-current {
+	display: block;
+}
+
+.from-right-to-center {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	animation: fromRightToCenter .8s ease 0s 1 forwards;
+}
+
+.from-center-to-right {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	animation: fromCenterToRight .8s ease 0s 1 forwards;
+}
+
+.from-center-to-left {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	animation: fromCenterToLeft .8s ease 0s 1 forwards;
+}
+
+.from-left-to-center {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	animation: fromLeftToCenter .8s ease 0s 1 forwards;
+}
+
+@keyframes fromRightToCenter {
+	0% {
+		opacity: .9;
+		transform: translate3d(100%,0,0);
+	}
+	100% {
+		opacity: 1;
+		transform: translate3d(0,0,0);
+	}
+}
+
+@keyframes fromCenterToRight {
+	0% {
+		opacity: 1;
+		transform: translate3d(0,0,0);
+	}
+	100% {
+		opacity: .9;
+		transform: translate3d(100%,0,0);
+	}
+}
+
+@keyframes fromCenterToLeft {
+	0% {
+		opacity: 1;
+		transform: translate3d(0,0,0);
+	}
+	100% {
+		opacity: .5;
+		transform: translate3d(-20%,0,0);
+	}
+}
+
+@keyframes fromLeftToCenter {
+	0% {
+		opacity: .5;
+		transform: translate3d(-20%,0,0);
+	}
+	100% {
+		opacity: 1;
+		transform: translate3d(0,0,0);
+	}
+}
+
+/* Subpage */
+
+.subpage {
+	display: none;
+}
+
+.subpage-current {
+	display: block;
+}
+
+/* Toast */
+
+.toast {
+	display: none;
+	position: fixed;
+	top: 40%;
+	left: 50%;
+	transform: translate3d(-50%,-50%,0);
+	padding: .3rem .6rem;
+	border-radius: .3rem;
+	background-color: #000;
+	color: #FFF;
+}
