@@ -1,4 +1,4 @@
-import PURVIEW_AUTH from 'remote/api/PURVIEW_AUTH';
+import PURVIEW_AUTH from 'api/PURVIEW_AUTH';
 let cookie = require('util/cookie');
 let loginStore = require('store/login');
 

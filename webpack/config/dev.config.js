@@ -83,7 +83,7 @@ let config = {
 			page: path.resolve( cwd, 'src/container' ),
 			ui: path.resolve( cwd, 'src/component' ),
 			store: path.resolve( cwd, 'src/store' ),
-			remote: path.resolve( cwd, 'src/remote' ),
+			api: path.resolve( cwd, 'src/api' ),
 			util: path.resolve( cwd, 'src/util' )
 		},
 		extensions: [ '', '.js', '.css', '.tag' ]

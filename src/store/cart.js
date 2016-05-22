@@ -1,5 +1,5 @@
-import GET_BY_CATEGORY from 'remote/api/GET_BY_CATEGORY';
-import GET_INDEX_ITEMS from 'remote/api/GET_INDEX_ITEMS';
+import GET_BY_CATEGORY from 'api/GET_BY_CATEGORY';
+import GET_INDEX_ITEMS from 'api/GET_INDEX_ITEMS';
 import purview, { LOGIN_USER } from '../purview';
 
 let cartStore = require('store/cart');

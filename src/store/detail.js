@@ -1,4 +1,4 @@
-import GET_DETAIL_BY_ID from 'remote/api/GET_DETAIL_BY_ID';
+import GET_DETAIL_BY_ID from 'api/GET_DETAIL_BY_ID';
 
 let cartStore = require('store/cart');
 let store = {};

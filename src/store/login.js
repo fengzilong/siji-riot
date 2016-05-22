@@ -1,4 +1,4 @@
-import LOGIN from 'remote/api/LOGIN';
+import LOGIN from 'api/LOGIN';
 
 let store = {};
 riot.observable( store );
