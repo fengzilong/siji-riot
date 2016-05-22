@@ -24,5 +24,7 @@ export default () => {
 		}
 	)
 
-	server.listen( baseConfig.cdnPort );
+	server.listen(baseConfig.cdnPort, () => {
+		console.log( `🌎 devServer Started（port:${baseConfig.cdnPort}）` );
+	});
 };

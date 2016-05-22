@@ -72,7 +72,7 @@ router.post('/api/cart/subtract', ( req, res, next ) => {
 // });
 
 server.listen(baseConfig.staticPort, () => {
-	console.log( `> 🌎 Server Started (port: ${baseConfig.staticPort})` );
+	console.log( `🌎 Server Started (port: ${baseConfig.staticPort})` );
 });
 
 devServer();

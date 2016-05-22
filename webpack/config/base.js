@@ -1,10 +1,10 @@
 export default {
 	// cdn config
-	cdnHost: 'cdn.com',
+	cdnHost: 'localhost',
 	cdnPort: '8081',
 	cdnPath: 'dist',
 	// static server config
-	staticHost: 'demo.com',
+	staticHost: 'localhost',
 	staticPort: '80',
 	distPath: 'dist'
 }
