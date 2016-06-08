@@ -5,7 +5,6 @@ import express from 'express';
 import expressjwt from 'express-jwt';
 import jwt from 'jsonwebtoken';
 import bodyParser from 'body-parser';
-import compression from 'compression';
 import httpProxy from 'http-proxy';
 import db from './db';
 
@@ -21,7 +20,6 @@ let proxy = httpProxy.createProxyServer({
 	}
 });
 
-server.use( compression() );
 server.use( express.static( __dirname ) );
 server.use( jsonServer.defaults() );
 server.use( bodyParser.json() );

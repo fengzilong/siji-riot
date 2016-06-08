@@ -31,8 +31,7 @@
     "riotjs-loader": "^1.2.0",
     "static-favicon": "^2.0.0-alpha",
     "webpack": "^1.12.11",
-    "webpack-dev-middleware": "^1.5.1",
-	"compression": "^1.6.1",
+    "webpack-dev-middleware": "^1.5.1"
   },
   "dependencies": {
     "whatwg-fetch": "^0.11.0"
