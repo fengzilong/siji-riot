@@ -1,6 +1,3 @@
-require('ui/ui-number-input');
-require('ui/ui-toast');
-
 <page-detail>
 	<div class="{ styles.container }">
 		<div class="{ styles.sliders }">

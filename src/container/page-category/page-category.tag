@@ -1,5 +1,3 @@
-require('ui/ui-nav');
-
 <page-category>
 	<nav class="{ styles.nav }">
 		<div

@@ -1,8 +1,7 @@
-require('./style/reset.css');
-require('./style/font.css');
-require('./style/index.css');
-require('./SJ');
-require('./routes');
+import './style';
+import './SJ';
+import './ui';
+import './routes';
 
 riot.route.base( '#!' );
 riot.route.start( true );

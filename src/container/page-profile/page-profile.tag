@@ -1,7 +1,3 @@
-require('ui/ui-nav');
-require('ui/ui-cells');
-require('ui/ui-cell');
-
 <page-profile>
 	<div class="{ styles.avatar_wrapper }">
 		<img class="{ styles.avatar_image }" src="{ defaultAvatar }" alt="" />
@@ -20,7 +16,7 @@ require('ui/ui-cell');
 		<div class="{ styles.order_entry }">
 			<img src="{ icon2 }" alt="" />
 			<br />
-			代发货
+			待发货
 		</div>
 		<div class="{ styles.order_entry }">
 			<img src="{ icon3 }" alt="" />

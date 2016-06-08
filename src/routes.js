@@ -1,10 +1,6 @@
 import purview, { VISITOR, LOGIN_USER } from './purview';
 
-// ==========================
-// Home
-// ==========================
-
-riot.route('/', function(){
+riot.route('/', () => {
 	require.ensure([], ( require ) => {
 		require('page/page-home');
 		purview( VISITOR ).then(() => {
@@ -19,10 +15,6 @@ riot.route('/', function(){
 		});
 	}, 'home');
 });
-
-// ==========================
-// Category
-// ==========================
 
 riot.route('/category/*', ( category ) => {
 	require.ensure([], ( require ) => {
@@ -44,10 +36,6 @@ riot.route('/category/*', ( category ) => {
 	}, 'category');
 });
 
-// ==========================
-// Detail
-// ==========================
-
 riot.route('/detail/*', function( pid ){
 	require.ensure([], function( require ){
 		require('page/page-detail');
@@ -68,10 +56,6 @@ riot.route('/detail/*', function( pid ){
 	}, 'detail');
 });
 
-// ==========================
-// Profile
-// ==========================
-
 riot.route('/profile', () => {
 	require.ensure([], ( require ) => {
 		require('page/page-profile');
@@ -88,10 +72,6 @@ riot.route('/profile', () => {
 		});
 	}, 'profile');
 });
-
-// ==========================
-// Cart
-// ==========================
 
 riot.route('/cart', () => {
 	require.ensure([], ( require ) => {

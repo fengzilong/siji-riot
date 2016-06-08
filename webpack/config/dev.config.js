@@ -15,7 +15,7 @@ let cwd = process.cwd();
 let config = {
 	devtool: 'source-map',
 	entry: {
-		"main": [
+		"app": [
 			`webpack-dev-server/client?http://${baseConfig.cdnHost}:${baseConfig.cdnPort}`,
 			'babel-polyfill',
 			path.resolve( cwd, 'src/index.js' )
@@ -23,13 +23,10 @@ let config = {
 	},
 	output: {
 		path: path.resolve( cwd, baseConfig.distPath ),
-		filename: 'index-[hash:8].js',
-		// async chunk
+		filename: '[name]-[hash:8].js',
 		chunkFilename: '[name]-[hash:8].js',
 		publicPath: `//${baseConfig.cdnHost}:${baseConfig.cdnPort}/${baseConfig.cdnPath}/`
 	},
-	debug: false,
-	watch: true,
 	context: cwd,
 	module: {
 		preLoaders: [
@@ -42,26 +39,19 @@ let config = {
 		],
 		loaders: [
 			{
-				test: /\.(jpg|png|gif)$/,
-				include: path.resolve( cwd, 'src' ),
+				test: /\.(jpg|jpeg|png|gif)$/,
 				exclude: /node_modules/,
 				loader: `url-loader?limit=10240&name=images/[path][name].[ext]?[hash:8]&context=` + path.resolve( cwd, 'src/assets/images' )
 			},
 			{
 				test: /\.(ttf|woff|eot|svg)$/,
-				include: path.resolve( cwd, 'src' ),
 				exclude: /node_modules/,
 				loader: `url-loader?limit=10240&name=font/[path][name].[ext]?[hash:8]&context=` + path.resolve( cwd, 'src/assets/font' )
 			},
 			{
-				test: /\.js$/,
-				include: path.resolve( cwd, 'src' ),
+				test: /\.(js|tag)$/,
 				exclude: /node_modules/,
-				loader: 'babel-loader',
-				query: {
-					plugins: ['transform-runtime'],
-					presets: ['stage-0']
-				}
+				loader: 'babel-loader'
 			},
 			{
 				test: /\.css$/,
@@ -73,20 +63,16 @@ let config = {
 		noParse: []
 	},
 	resolve: {
-		modulesDirectories: [
-			'node_modules'
-		],
 		alias: {
 			image: path.resolve( cwd, 'src/assets/images' ),
 			font: path.resolve( cwd, 'src/assets/font' ),
-			vendor: path.resolve( cwd, 'src/assets/vendor' ),
 			page: path.resolve( cwd, 'src/container' ),
 			ui: path.resolve( cwd, 'src/component' ),
 			store: path.resolve( cwd, 'src/store' ),
 			api: path.resolve( cwd, 'src/api' ),
 			util: path.resolve( cwd, 'src/util' )
 		},
-		extensions: [ '', '.js', '.css', '.tag' ]
+		extensions: [ '', '.js', '.tag', '.css' ]
 	},
 	plugins: [
 		new webpack.DefinePlugin({
@@ -98,7 +84,7 @@ let config = {
 			fetch: 'imports?this=>global!exports?global.fetch!whatwg-fetch'
 		}),
 		new ExtractTextPlugin(
-			'index.css?v=[hash:8]',
+			'app.css?v=[hash:8]',
 			// including css from lazyload page
 			{
 				allChunks: true
@@ -109,11 +95,6 @@ let config = {
 			inject: true
 		}),
 		new HtmlToDiskPlugin(),
-		// new webpack.optimize.UglifyJsPlugin({
-		// 	compress: {
-		// 		warnings: false
-		// 	}
-		// })
 	],
 	postcss: () => {
 		return [

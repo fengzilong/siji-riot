@@ -1,6 +1,3 @@
-require('ui/ui-nav');
-require('ui/ui-number-input');
-
 <page-cart>
 	<div if="{ Object.keys(store.getCartItems()).length === 0 }" class="{ styles.empty }">
 		<img class="{ styles.empty_icon }" src="{ emptyIcon }" alt="" />

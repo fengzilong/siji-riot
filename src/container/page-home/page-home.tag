@@ -1,5 +1,3 @@
-require('ui/ui-nav');
-
 <page-home>
 	<img src="{ banner }" style="height: 7rem;" />
 
