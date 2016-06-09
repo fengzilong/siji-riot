@@ -1,24 +1,24 @@
-import ExtractTextPlugin from 'extract-text-webpack-plugin'
-import HtmlWebpackPlugin from 'html-webpack-plugin'
-import autoprefixer from 'autoprefixer'
-import jetpack from 'fs-jetpack'
-import webpack from 'webpack'
-import path from 'path'
-import _ from 'lodash'
+import ExtractTextPlugin from 'extract-text-webpack-plugin';
+import HtmlWebpackPlugin from 'html-webpack-plugin';
+import autoprefixer from 'autoprefixer';
+import webpack from 'webpack';
+import path from 'path';
+import _ from 'lodash';
 import promise from 'es6-promise';
-import baseConfig from './base'
-import HtmlToDiskPlugin from '../plugins/html-to-disk'
+import baseConfig from './base';
+import HtmlToDiskPlugin from '../plugins/html-to-disk';
 
 promise.polyfill();
-let cwd = process.cwd();
 
-let config = {
+const cwd = process.cwd();
+
+const config = {
 	devtool: 'source-map',
 	entry: {
 		"app": [
 			`webpack-dev-server/client?http://${baseConfig.cdnHost}:${baseConfig.cdnPort}`,
 			'babel-polyfill',
-			path.resolve( cwd, 'src/index.js' )
+			path.resolve( cwd, 'src/app.js' )
 		]
 	},
 	output: {
@@ -54,10 +54,10 @@ let config = {
 				loader: 'babel-loader'
 			},
 			{
-				test: /\.css$/,
+				test: /\.(css|less)$/,
 				include: path.resolve( cwd, 'src' ),
 				exclude: /node_modules/,
-				loader: ExtractTextPlugin.extract('style-loader', 'css-loader?localIdentName=[name]-[local]-[hash:base64:5]!postcss-loader')
+				loader: ExtractTextPlugin.extract('style-loader', 'css-loader?localIdentName=[name]-[local]-[hash:base64:5]!postcss-loader!less-loader')
 			}
 		],
 		noParse: []
@@ -65,14 +65,13 @@ let config = {
 	resolve: {
 		alias: {
 			image: path.resolve( cwd, 'src/assets/images' ),
-			font: path.resolve( cwd, 'src/assets/font' ),
 			page: path.resolve( cwd, 'src/container' ),
 			ui: path.resolve( cwd, 'src/component' ),
 			store: path.resolve( cwd, 'src/store' ),
 			api: path.resolve( cwd, 'src/api' ),
 			util: path.resolve( cwd, 'src/util' )
 		},
-		extensions: [ '', '.js', '.tag', '.css' ]
+		extensions: [ '', '.js', '.tag', '.less', '.css' ]
 	},
 	plugins: [
 		new webpack.DefinePlugin({
@@ -84,7 +83,7 @@ let config = {
 			fetch: 'imports?this=>global!exports?global.fetch!whatwg-fetch'
 		}),
 		new ExtractTextPlugin(
-			'app.css?v=[hash:8]',
+			'app-[hash:8].css',
 			// including css from lazyload page
 			{
 				allChunks: true
