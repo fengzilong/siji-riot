@@ -1,9 +1,10 @@
 import GET_BY_CATEGORY from 'api/GET_BY_CATEGORY';
 import GET_INDEX_ITEMS from 'api/GET_INDEX_ITEMS';
+import observable from 'riot-observable';
+import cartStore from 'store/cart';
 
-let cartStore = require('store/cart');
 let store = {};
-riot.observable( store );
+observable( store );
 
 // ============= Data =============
 
@@ -50,4 +51,4 @@ store.on('CART_ADD', ( item ) => {
 	cartStore.trigger('CART_ADD', item);
 });
 
-module.exports = store;
+export default store;

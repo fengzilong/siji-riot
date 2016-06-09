@@ -1,4 +1,4 @@
-page-detail, [riot-tag="page-detail"] {
+page-detail, [data-is="page-detail"] {
 	position: fixed;
 	top: 0;
 	width: 100%;

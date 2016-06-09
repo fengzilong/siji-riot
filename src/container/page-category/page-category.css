@@ -1,4 +1,4 @@
-page-category, [riot-tag="page-category"] {
+page-category, [data-is="page-category"] {
 	padding-bottom: 2.025rem;
 }
 

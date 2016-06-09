@@ -1,3 +1,5 @@
+import store from 'store/detail';
+
 <page-detail>
 	<div class="{ styles.container }">
 		<div class="{ styles.sliders }">
@@ -29,33 +31,17 @@
 	</div>
 
 	<script>
-		var self = this;
-		this.store = require('store/detail');
-		this.store.on('$UPDATE', function(){
-			self.update();
-		});
-
 		this.styles = require('./page-detail.css');
 		this.navBack = require('image/detail/nav_back.png');
 		this.navCart = require('image/detail/nav_cart.png');
 
-		this.onAdd = function(){
-			self.store.trigger('ADD');
-		};
+		this.store = store;
+		this.store.on('$UPDATE', () => this.update());
 
-		this.onSubtract = function(){
-			self.store.trigger('SUBTRACT');
-		};
+		this.onAdd = () => this.store.trigger('ADD');
+		this.onSubtract = () => this.store.trigger('SUBTRACT');
+		this.onConfirmAddToCart = () => this.store.trigger('CART_ITEM_NUM_ADD_BY');
 
-		this.onConfirmAddToCart = function(){
-			self.store.trigger('CART_ITEM_NUM_ADD_BY');
-		};
-
-		this.on('mount', function(){
-			this.store.trigger(
-				'GET_DETAIL_BY_ID',
-				this.opts.pid
-			);
-		});
+		this.on('mount', () => this.store.trigger( 'GET_DETAIL_BY_ID', this.opts.pid ));
 	</script>
 </page-detail>

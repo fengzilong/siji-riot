@@ -1,10 +1,11 @@
 import GET_BY_CATEGORY from 'api/GET_BY_CATEGORY';
 import GET_INDEX_ITEMS from 'api/GET_INDEX_ITEMS';
 import purview, { LOGIN_USER } from '../purview';
+import observable from 'riot-observable';
+import cartStore from 'store/cart';
 
-let cartStore = require('store/cart');
 let store = {};
-riot.observable( store );
+observable( store );
 
 // ============= Data =============
 
@@ -53,7 +54,7 @@ store.on('CART_ADD', ( item ) => {
 
 		SJ.toast( '添加成功' ).show();
 
-		store.trigger('$UPDATE');
+		store.trigger( '$UPDATE' );
 	});
 });
 
@@ -63,7 +64,7 @@ store.on('CART_ITEM_NUM_ADD', ( pid ) => {
 
 		calc();
 
-		store.trigger('$UPDATE');
+		store.trigger( '$UPDATE' );
 	});
 });
 
@@ -76,7 +77,7 @@ store.on('CART_ITEM_NUM_SUBTRACT', ( pid ) => {
 
 		calc();
 
-		store.trigger('$UPDATE');
+		store.trigger( '$UPDATE' );
 	});
 });
 
@@ -91,13 +92,11 @@ store.on('CART_ITEM_NUM_ADD_BY', ( item, num ) => {
 
 		calc();
 
-		// 系统类消息是全局的，暂时用命令式调用
-		SJ.toast('添加成功').show();
+		// 系统类消息是全局的，使用命令式调用更加方便
+		SJ.toast( '添加成功' ).show();
 
-		store.trigger('$UPDATE');
+		store.trigger( '$UPDATE' );
 	});
 });
 
-// 使用订阅/发布($UPDATE)方式，这样一个store就可以被多个tag使用，比强制绑定tag要灵活
-
-module.exports = store;
+export default store;

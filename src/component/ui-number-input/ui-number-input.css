@@ -1,4 +1,4 @@
-ui-number-input, [riot-tag="ui-number-input"] {
+ui-number-input, [data-is="ui-number-input"] {
 	display: block;
 	border: solid 1px #DDD;
 	width: 3rem;

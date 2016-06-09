@@ -1,4 +1,4 @@
-page-cart, [riot-tag="page-cart"] {
+page-cart, [data-is="page-cart"] {
 	padding-bottom: 4rem;
 }
 :local(.empty_icon) {

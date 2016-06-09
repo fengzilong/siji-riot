@@ -1,1 +1,0 @@
-require('./page-profile.tag');

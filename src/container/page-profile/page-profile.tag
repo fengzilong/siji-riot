@@ -1,3 +1,5 @@
+import cartStore from 'store/cart';
+
 <page-profile>
 	<div class="{ styles.avatar_wrapper }">
 		<img class="{ styles.avatar_image }" src="{ defaultAvatar }" alt="" />
@@ -35,11 +37,8 @@
 	<ui-nav active="{ activeTabIndex }" num2="{ cartStore.getTotalNum() }"></ui-nav>
 
 	<script>
-		this.cartStore = require('store/cart');
-		this.cartStore.on('$UPDATE', () => {
-			// TODO:优化，当前view不可见时，推迟更新
-			this.update();
-		});
+		this.cartStore = cartStore;
+		this.cartStore.on('$UPDATE', () => this.update());
 
 		this.styles = require('./page-profile.css');
 		this.defaultAvatar = require('image/profile/default_avatar.png');

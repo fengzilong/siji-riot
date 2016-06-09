@@ -1,7 +1,8 @@
 import LOGIN from 'api/LOGIN';
+import observable from 'riot-observable';
 
 let store = {};
-riot.observable( store );
+observable( store );
 
 // ============= Data =============
 
@@ -38,4 +39,4 @@ store.on('DO_LOGIN', async ( username, password ) => {
 	}
 });
 
-module.exports = store;
+export default store;

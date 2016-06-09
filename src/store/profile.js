@@ -1,3 +1,5 @@
+import observable from 'riot-observable';
+
 let store = {};
 riot.observable( store );
 
@@ -5,4 +7,4 @@ riot.observable( store );
 
 // ============= Actions =============
 
-module.export = store;
+export default store;

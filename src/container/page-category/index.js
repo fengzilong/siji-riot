@@ -1,1 +1,0 @@
-require('./page-category.tag');

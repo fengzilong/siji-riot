@@ -1,8 +1,9 @@
 import GET_DETAIL_BY_ID from 'api/GET_DETAIL_BY_ID';
+import observable from 'riot-observable';
+import cartStore from 'store/cart';
 
-let cartStore = require('store/cart');
 let store = {};
-riot.observable( store );
+observable( store );
 
 // ============= Data =============
 
@@ -92,4 +93,4 @@ store.on('CART_ITEM_NUM_ADD_BY', () => {
 	cartStore.trigger( 'CART_ITEM_NUM_ADD_BY', item, num );
 });
 
-module.exports = store;
+export default store;

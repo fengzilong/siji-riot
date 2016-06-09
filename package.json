@@ -35,7 +35,6 @@
     "lodash": "^4.0.0",
     "morgan": "^1.6.1",
     "postcss-loader": "^0.9.1",
-    "riot": "^2.3.13",
     "riotjs-loader": "^3.0.0",
     "static-favicon": "^2.0.0-alpha",
     "style-loader": "^0.13.1",
@@ -47,6 +46,9 @@
   "dependencies": {
     "babel-polyfill": "^6.9.1",
     "es6-promise": "^3.2.1",
+    "riot": "^2.4.1",
+    "riot-observable": "^3.0.0-alpha.1",
+    "riot-route": "^2.4.0",
     "whatwg-fetch": "^0.11.0"
   }
 }

@@ -1,3 +1,5 @@
+import cartStore from 'store/cart';
+
 <page-home>
 	<img src="{ banner }" style="height: 7rem;" />
 
@@ -27,11 +29,6 @@
 	<ui-nav active="{ activeTabIndex }" num2="{ cartStore.getTotalNum() }"></ui-nav>
 
 	<script>
-		this.cartStore = require('store/cart');
-		this.cartStore.on('$UPDATE', () => {
-			this.update();
-		});
-
 		this.styles = require('./page-home.css');
 		this.banner = require('image/home/banner.jpg');
 		this.icon0 = require('image/home/cate_icon_01.png');
@@ -40,8 +37,7 @@
 		this.icon3 = require('image/home/cate_icon_04.png');
 		this.activeTabIndex = 0;
 
-		// 每个page内部有一个loading方法，供外部调用，再提供一个render方法，调用内部的update进行更新
-		this.on('mount', function(){
-		});
+		this.cartStore = cartStore;
+		this.cartStore.on('$UPDATE', () => this.update());
 	</script>
 </page-home>

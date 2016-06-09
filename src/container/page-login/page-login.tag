@@ -1,3 +1,5 @@
+import store from 'store/login';
+
 <page-login>
 	<div if="{ store.getShowLogin() }" class="{ styles.base }">
 		<div class="{ styles.logo }">
@@ -12,20 +14,17 @@
 	</div>
 
 	<script>
-		var self = this;
-		this.store = require('store/login');
-		this.store.on('$UPDATE', function(){
-			self.update();
-		});
-
 		this.styles = require('./page-login.css');
 		this.logo = require('image/login/logo.png');
 
-		this.doLogin = function(){
-			self.store.trigger(
+		this.store = store;
+		this.store.on('$UPDATE', () => this.update());
+
+		this.doLogin = () => {
+			this.store.trigger(
 				'DO_LOGIN',
-				self.username.value,
-				self.password.value
+				this.username.value,
+				this.password.value
 			);
 		};
 	</script>

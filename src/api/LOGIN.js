@@ -1,10 +1,9 @@
-let cookie = require('util/cookie');
+import cookie from 'util/cookie';
 
 export default ( username, password ) => {
 	return new Promise(( resolve, reject ) => {
 		setTimeout(() => {
 			if( username === 'demo' && password === 'demo' ){
-				// 写入认证信息到cookie
 				cookie.set('username', 'demo');
 				cookie.set('is_login', 1);
 				resolve({

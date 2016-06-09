@@ -1,6 +1,7 @@
 import purview, { VISITOR, LOGIN_USER } from './purview';
+import registerRoute from 'riot-route';
 
-riot.route('/', () => {
+registerRoute('/', () => {
 	require.ensure([], ( require ) => {
 		require('page/page-home');
 		purview( VISITOR ).then(() => {
@@ -16,7 +17,7 @@ riot.route('/', () => {
 	}, 'home');
 });
 
-riot.route('/category/*', ( category ) => {
+registerRoute('/category/*', ( category ) => {
 	require.ensure([], ( require ) => {
 		require('page/page-category');
 		purview( VISITOR ).then(() => {
@@ -36,7 +37,7 @@ riot.route('/category/*', ( category ) => {
 	}, 'category');
 });
 
-riot.route('/detail/*', function( pid ){
+registerRoute('/detail/*', function( pid ){
 	require.ensure([], function( require ){
 		require('page/page-detail');
 		purview( VISITOR ).then(() => {
@@ -56,7 +57,7 @@ riot.route('/detail/*', function( pid ){
 	}, 'detail');
 });
 
-riot.route('/profile', () => {
+registerRoute('/profile', () => {
 	require.ensure([], ( require ) => {
 		require('page/page-profile');
 		purview( VISITOR ).then(() => {
@@ -73,7 +74,7 @@ riot.route('/profile', () => {
 	}, 'profile');
 });
 
-riot.route('/cart', () => {
+registerRoute('/cart', () => {
 	require.ensure([], ( require ) => {
 		require('page/page-cart');
 		purview( LOGIN_USER ).then(() => {
@@ -89,3 +90,6 @@ riot.route('/cart', () => {
 		});
 	}, 'cart');
 });
+
+registerRoute.base( '#!' );
+registerRoute.start( true );

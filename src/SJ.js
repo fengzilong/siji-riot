@@ -1,3 +1,5 @@
+import route from 'riot-route';
+
 (function( global ){
 	global.SJ = {};
 
@@ -82,7 +84,7 @@
 	};
 
 	SJ.route = ( ...args ) => {
-		return riot.route( ...args );
+		return route( ...args );
 	};
 
 	SJ.route.back = () => {

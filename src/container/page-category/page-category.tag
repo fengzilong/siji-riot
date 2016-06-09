@@ -1,3 +1,6 @@
+import store from 'store/category';
+import cartStore from 'store/cart';
+
 <page-category>
 	<nav class="{ styles.nav }">
 		<div
@@ -63,39 +66,33 @@
 	<ui-nav active="1" num2="{ cartStore.getTotalNum() }"></ui-nav>
 
 	<script>
-		var self = this;
-		this.store = require('store/category');
-		this.store.on('$UPDATE', function(){
-			self.update();
-		});
-
-		this.cartStore = require('store/cart');
-		this.cartStore.on('$UPDATE', function(){
-			self.update();
-		})
-
 		this.styles = require('./page-category.css');
 		this.loadingImage = require('image/lemon_loading.gif');
 
-		this.onDetail = function(e) {
+		this.store = store;
+		this.cartStore = cartStore;
+		this.store.on('$UPDATE', () => this.update());
+		this.cartStore.on('$UPDATE', () => this.update())
+
+		this.onDetail = e => {
 			if( !e.target.hasAttribute( 'add' ) ) {
 				SJ.route( 'detail/' + e.item.pid );
 			}
 		};
 
-		this.onAdd = function( e ) {
+		this.onAdd = e => {
 			e.preventUpdate = true;
 			this.store.trigger('CART_ADD', e.item);
 		};
 
-		this.on('mount', function(){
+		this.on('mount', () => {
 			this.store.trigger(
 				'GET_BY_CATEGORY',
 				this.opts.category
 			);
 		});
 
-		this.on('update', function(){
+		this.on('update', () => {
 			this.items = this.store.getItems();
 			this.loading = this.store.getLoading();
 		});

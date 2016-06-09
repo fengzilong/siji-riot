@@ -1,1 +1,0 @@
-require('./page-home.tag');
