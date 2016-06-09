@@ -1,5 +1,5 @@
 import PURVIEW_AUTH from 'api/PURVIEW_AUTH';
-const cookie = require('util/cookie');
+import cookie from 'util/cookie';
 import loginStore from 'store/login';
 
 let loginPromise = () => {
