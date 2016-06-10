@@ -1,9 +1,7 @@
-export default function( pid ){
+export default pid => {
 	return fetch(`/api/detail/${pid}`)
 		.then(response => response.json())
-		.then(( json ) => {
-			return {
-				data: json
-			};
-		});
+		.then(json => ({
+			data: json
+		}));
 };
