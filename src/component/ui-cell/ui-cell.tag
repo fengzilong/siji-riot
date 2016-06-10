@@ -1,3 +1,5 @@
+import styles from './ui-cell.less';
+
 <ui-cell>
 	<div class="{ styles.left }">
 		<i class="iconfont" style="font-size: .8rem;">{ opts.icon }</i>
@@ -11,6 +13,6 @@
 	</div>
 
 	<script>
-		this.styles = require('./ui-cell.css');
+		this.styles = styles;
 	</script>
 </ui-cell>

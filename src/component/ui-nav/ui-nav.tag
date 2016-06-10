@@ -1,3 +1,5 @@
+import styles from './ui-nav.less';
+
 <ui-nav>
 	<nav class="{ styles.nav }">
 		<div
@@ -45,6 +47,6 @@
 		</div>
 	</nav>
 	<script>
-		this.styles = require('./ui-nav.css');
+		this.styles = styles;
 	</script>
 </ui-nav>

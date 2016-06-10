@@ -1,3 +1,5 @@
+import styles from './ui-confirm.less';
+
 <ui-confirm if="{ opts.show }">
 	<div class="{ styles.base }">
 		<div class="{ styles.content }">
@@ -14,7 +16,7 @@
 	</div>
 
 	<script>
-		this.styles = require('./ui-confirm.css');
+		this.styles = styles;
 		this.noop = () => {};
 		this.on('mount', function(){
 
