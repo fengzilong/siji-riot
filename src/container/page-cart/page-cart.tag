@@ -24,7 +24,11 @@ import store from 'store/cart';
 					&yen;{ v.price }
 				</div>
 				<div class="{ styles.cart_item_num }">
-					<ui-number-input value="{ v.num }" onsubtract="{ onSubtract }" onadd="{ onAdd }"></ui-number-input>
+					<ui-number-input
+						value="{ v.num }"
+						on-subtract="{ onSubtract }"
+						on-add="{ onAdd }"
+					></ui-number-input>
 				</div>
 			</div>
 		</div>
@@ -39,7 +43,10 @@ import store from 'store/cart';
 		</div>
 	</div>
 
-	<ui-nav active="2" num2="{ store.getTotalNum() }"></ui-nav>
+	<ui-nav
+		active="2"
+		num2="{ store.getTotalNum() }"
+	></ui-nav>
 
 	<script>
 		this.styles = require('./page-cart.css');

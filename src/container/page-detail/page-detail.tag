@@ -24,7 +24,12 @@ import store from 'store/detail';
 	<img class="{ styles.nav_cart }" src="{ navCart }" onclick="SJ.route('cart')" alt="" />
 
 	<div class="{ styles.cartbar }" if="{ store.getDataReady() }">
-		<ui-number-input value="{ store.getNum() }" onadd="{ onAdd }" onsubtract="{ onSubtract }"></ui-number-input>
+		<ui-number-input
+			value="{ store.getNum() }"
+			on-add="{ onAdd }"
+			on-subtract="{ onSubtract }"
+			min="{ 1 }"
+		></ui-number-input>
 		<div class="{ styles.add_to_cart }" onclick="{ onConfirmAddToCart }">
 			放入购物篮
 		</div>
