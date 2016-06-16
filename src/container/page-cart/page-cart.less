@@ -35,9 +35,10 @@ page-cart, [data-is="page-cart"] {
 	overflow: hidden;
 	background-color: #FFF;
 	border-bottom: dashed 1px #DDD;
-}
-:local(.cart_item:last-child) {
-	border-bottom: none;
+
+	&:last-child {
+		border-bottom: none;
+	}
 }
 :local(.cart_item_image) {
 	box-sizing: border-box;
@@ -73,9 +74,10 @@ page-cart, [data-is="page-cart"] {
 	flex: 3;
 	background-color: #FFF;
 	padding-left: .6rem;
-}
-:local(.amount span) {
-	color: #ff3600;
+
+	span {
+		color: #ff3600;
+	}
 }
 :local(.paybtn) {
 	flex: 2;

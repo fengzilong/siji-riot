@@ -49,7 +49,7 @@ import store from 'store/cart';
 	></ui-nav>
 
 	<script>
-		this.styles = require('./page-cart.css');
+		this.styles = require('./page-cart.less');
 		this.emptyIcon = require('image/cart/empty.png');
 
 		this.store = store;

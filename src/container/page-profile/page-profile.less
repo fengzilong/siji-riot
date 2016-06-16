@@ -28,13 +28,15 @@
 	float: left;
 	box-sizing: border-box;
 	text-align: center;
-}
-:local(.order_entry:not(:first-child)) {
-	border-left: solid 1px #e5e5e5;
-}
-:local(.order_entry img) {
-	display: inline-block;
-	width: 1.1rem;
-	height: 1rem;
-	margin-bottom: .1rem;
+
+	&:not(:first-child) {
+		border-left: solid 1px #e5e5e5;
+	}
+
+	img {
+		display: inline-block;
+		width: 1.1rem;
+		height: 1rem;
+		margin-bottom: .1rem;
+	}
 }

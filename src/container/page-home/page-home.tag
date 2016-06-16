@@ -29,7 +29,7 @@ import cartStore from 'store/cart';
 	<ui-nav active="{ activeTabIndex }" num2="{ cartStore.getTotalNum() }"></ui-nav>
 
 	<script>
-		this.styles = require('./page-home.css');
+		this.styles = require('./page-home.less');
 		this.banner = require('image/home/banner.jpg');
 		this.icon0 = require('image/home/cate_icon_01.png');
 		this.icon1 = require('image/home/cate_icon_02.png');

@@ -40,7 +40,7 @@ import cartStore from 'store/cart';
 		this.cartStore = cartStore;
 		this.cartStore.on('$UPDATE', () => this.update());
 
-		this.styles = require('./page-profile.css');
+		this.styles = require('./page-profile.less');
 		this.defaultAvatar = require('image/profile/default_avatar.png');
 		this.icon0 = require('image/profile/order_icon_01.png');
 		this.icon1 = require('image/profile/order_icon_02.png');

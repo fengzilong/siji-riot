@@ -6,7 +6,7 @@ import store from 'store/login';
 			<img class="{ styles.logo_image }" src="{ logo }" alt="" />
 		</div>
 
-		<form class="{ styles.form }">
+		<form>
 			<input class="{ styles.form_input }" type="text" name="username" value="" placeholder="用户名">
 			<input class="{ styles.form_input }" type="password" name="password" value="" placeholder="密码">
 			<div class="{ styles.button }" onclick="{ doLogin }">登录</div>
@@ -14,7 +14,7 @@ import store from 'store/login';
 	</div>
 
 	<script>
-		this.styles = require('./page-login.css');
+		this.styles = require('./page-login.less');
 		this.logo = require('image/login/logo.png');
 
 		this.store = store;

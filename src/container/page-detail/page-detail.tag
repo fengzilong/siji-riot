@@ -36,7 +36,7 @@ import store from 'store/detail';
 	</div>
 
 	<script>
-		this.styles = require('./page-detail.css');
+		this.styles = require('./page-detail.less');
 		this.navBack = require('image/detail/nav_back.png');
 		this.navCart = require('image/detail/nav_cart.png');
 

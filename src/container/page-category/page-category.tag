@@ -66,13 +66,13 @@ import cartStore from 'store/cart';
 	<ui-nav active="1" num2="{ cartStore.getTotalNum() }"></ui-nav>
 
 	<script>
-		this.styles = require('./page-category.css');
+		this.styles = require('./page-category.less');
 		this.loadingImage = require('image/lemon_loading.gif');
 
 		this.store = store;
 		this.cartStore = cartStore;
 		this.store.on('$UPDATE', () => this.update());
-		this.cartStore.on('$UPDATE', () => this.update())
+		this.cartStore.on('$UPDATE', () => this.update());
 
 		this.onDetail = e => {
 			if( !e.target.hasAttribute( 'add' ) ) {
